@@ -1,0 +1,61 @@
+.roomList{
+    width: 100%;
+    height:83vh;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.room,.selectedRoom{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height:11%;
+    flex-shrink: 0;
+}
+
+.selectedRoom{
+    background-color: rgb(222, 220, 220);
+}
+
+.room:hover{
+    background-color: rgb(241, 238, 238);
+    cursor:pointer;
+}
+
+.roomName{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.roomInfo{
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items:end;
+    padding-bottom: 3px;
+    padding-left: 30px;
+}
+
+.newMessageAlert{
+    background-color: rgb(49, 217, 49);
+    color: white;
+    font-size: 10px;
+    padding:1px 4px 2px 4px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-bottom: 3px;
+}
+
+.lastChat{
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    height: 50%;
+    font-size: 12px;
+    padding: 2px 4px 0px 30px;
+    color:grey;
+}

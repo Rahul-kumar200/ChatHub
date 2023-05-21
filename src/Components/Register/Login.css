@@ -1,0 +1,68 @@
+.signin_page{
+    background-color: rgb(8, 112, 240);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+ }
+ .signin_heading{
+     color:white;
+     font-size: 40px;
+     margin-bottom: 50px;
+ }
+ 
+ .signin_box{
+     display: flex;
+     flex-direction: column;
+     width: 35%;
+     height: 38vh;
+     align-items: center;
+     background-color: white;
+     border-radius: 20px;
+     padding-top: 30px;
+     padding-bottom: 10px;
+ }
+ 
+ .input_username , .input_password{
+     width: 80%;
+     height: 40px;
+     border-radius: 20px;
+     padding-left: 20px;
+     margin : 10px 0px 10px 0px;
+     font-size: 18px;
+     border : 1px solid black
+ }
+ 
+ .signin_button{
+     color:white;
+     width: 30%;
+     height: 40px;
+     background-color:rgb(8, 112, 240) ;
+     margin-top: 20px;
+     border: none;
+     border-radius: 20px;
+ }
+ 
+ .signin_button:hover{
+     background-color:rgb(12, 93, 193) ;
+     color: white;
+     cursor: pointer;
+ }
+ 
+ .create_account{
+     margin-top: 30px;
+     cursor: pointer;
+ 
+ }
+ 
+ .create_account:hover{
+     color: blue;
+ }
+ 
+ .errorMessage{
+     color: red;
+     margin-top:30px ;
+     padding: 5px 10px 5px 10px;
+ }

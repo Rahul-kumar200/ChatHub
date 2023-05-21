@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { socket } from './services/socket';
+import Signup from './Components/Register/Signup';
+import Login from './Components/Register/Login';
+import {Routes,Route} from 'react-router-dom'
+import ErrorPage from './Components/Error/ErrorPage';
+import MainApp from './Components/Main/MainApp';
+import { useRecoilState } from 'recoil';
+import userData from './recoil/atom';
+import currentData from './recoil/currentData';
 
 function App() {
+
+  const [dataAtom,setDataAtom] = useRecoilState(userData);
+  const [currentRoom, setCurrentRoom] = useRecoilState(currentData);
+
+  useEffect(()=>{
+    socket.on('connect',()=>{
+      console.log('connected to socket with :',socket.id)
+    })
+  },[])
+   
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Routes>
+        <Route exact path="/" element={<Login/>} />
+        <Route exact path='/signup' element={<Signup/>}/>
+        <Route exact path='/main-app' element={<MainApp/>}/>
+        <Route path="*" element={<ErrorPage/>} />
+      </Routes>
     </div>
   );
 }
-
 export default App;

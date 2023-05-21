@@ -1,0 +1,86 @@
+.conversationArea{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    height: 79vh;
+    overflow-y: scroll; 
+    padding-top: 10px;
+}
+
+.my_message_info{
+    margin:10px 30px 1px 30px;
+    float:right;
+    clear: both;
+    font-size: 14px;
+  }
+  
+  
+  .other_message_info{
+    margin:10px 30px 1px 30px;
+    float:left;
+    clear: both;
+    font-size: 14px;
+  }
+
+.my_message{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    max-width: 60%;
+    width:fit-content;
+    height: fit-content;
+    background-color: rgb(229, 238, 253);
+    font-size: 15px;
+    padding : 10px 20px;
+    border-radius: 10px;
+    color:rgb(75, 71, 71);
+    float:right;
+    clear: both;
+    margin:0px 20px 10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+ }
+
+
+.other_message{
+   font-family:Verdana, Geneva, Tahoma, sans-serif;
+   width:fit-content;
+   max-width: 70%;
+   right : 20px;
+   top :10px;
+   background-color: rgb(222, 218, 218);
+   font-size: 15px;
+   margin:0px 20px 10px 20px;
+   padding : 10px 20px;
+   overflow: hidden;
+   border-radius: 10px;
+   color:rgb(75, 71, 71);
+   float:left;
+   clear: both;
+   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+ }
+ 
+ .newMessageContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height:12vh;
+    border-top: 2px solid rgb(226, 223, 223);
+ }
+
+ .newMessage{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    width: 75%;
+    border:none;
+    font-size: 16px;
+    outline: none;
+}
+
+.sendMessage{
+    width: 40px;
+    height: 40px;
+    cursor:pointer;
+}
+
+.sendMessage:hover{
+    width: 42px;
+    height: 42px;
+    cursor:pointer;
+}
