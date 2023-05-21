@@ -5,7 +5,7 @@ import { useRecoilState } from "recoil";
 import axios from "axios";
 import "./Signup.css";
 
-const URL = "http://localhost:8000";
+const URL = "https://chathubserver.onrender.com";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -22,6 +22,7 @@ const Signup = () => {
         const body = { username: username, password: password };
         const res = await axios.post(`${URL}/api/signup`, body);
         const data = res.data;
+        console.log(data)
         if (data.status === "success") {
           setDataAtom({
             username: username,
