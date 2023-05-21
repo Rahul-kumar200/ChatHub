@@ -32,7 +32,7 @@ const ConversationHeader = () => {
       }
 
     let finalData = {username : dataAtom.username , rooms :new_obj}
-    let res = await axios.post('http://localhost:8000/api/logout',finalData)
+    let res = await axios.post('https://chathubserver.onrender.com/api/logout',finalData)
     if(res.data.status=='success'){
         navigate("/");
     }

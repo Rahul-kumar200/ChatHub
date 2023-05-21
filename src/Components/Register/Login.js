@@ -6,7 +6,7 @@ import axios from "axios";
 import "./Login.css";
 import { socket } from "../../services/socket";
 
-const URL = "http://localhost:8000";
+const URL = "https://chathubserver.onrender.com";
 
 const Login = () => {
   const navigate = useNavigate();
