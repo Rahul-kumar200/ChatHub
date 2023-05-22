@@ -4,6 +4,7 @@
     height: 79vh;
     overflow-y: scroll; 
     padding-top: 10px;
+    background-color: rgb(212, 211, 211);
 }
 
 .my_message_info{
@@ -26,11 +27,11 @@
     max-width: 60%;
     width:fit-content;
     height: fit-content;
-    background-color: rgb(229, 238, 253);
+    background-color: rgb(69, 133, 243);
     font-size: 15px;
     padding : 10px 20px;
     border-radius: 10px;
-    color:rgb(75, 71, 71);
+    color:rgb(255, 255, 255);
     float:right;
     clear: both;
     margin:0px 20px 10px 20px;
@@ -44,13 +45,13 @@
    max-width: 70%;
    right : 20px;
    top :10px;
-   background-color: rgb(222, 218, 218);
+   background-color: rgb(253, 250, 250);
    font-size: 15px;
    margin:0px 20px 10px 20px;
    padding : 10px 20px;
    overflow: hidden;
    border-radius: 10px;
-   color:rgb(75, 71, 71);
+   color:rgb(49, 48, 48);
    float:left;
    clear: both;
    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;

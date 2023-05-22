@@ -5,6 +5,7 @@ import userData from "../../../recoil/atom";
 import "./ConversationArea.css";
 import sendButton from "./../../../logo/sendButton.png";
 import {socket} from "./../../../services/socket"
+import Start from "./start";
 
 const ConversationArea = () => {
   const sendButtonRef = useRef(null);
@@ -60,7 +61,8 @@ const ConversationArea = () => {
   return (
     <>
       <div className="conversationArea">
-        {currentRoom.chats.map((chat) => {
+        {currentRoom.roomId==='' && <Start/>}
+        {currentRoom.roomId!=='' &&  (currentRoom.chats.map((chat) => {
           return (
             <div>
               <div
@@ -75,7 +77,7 @@ const ConversationArea = () => {
               </div>
             </div>
           );
-        })}
+        }))}
         <div ref={messageEndRef} className="my_message_info"></div> 
       </div>
 
