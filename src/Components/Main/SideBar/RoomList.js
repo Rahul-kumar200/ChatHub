@@ -38,6 +38,27 @@ const RoomList = () => {
     }
   };
 
+  const deleteRoom =(e,choosenRoom)=>{
+    e.stopPropagation();
+      let sure = window.confirm(`Are you sure you want to leave ${choosenRoom.roomId} room`);
+      
+      if(sure){
+          let obj=[];
+
+          for(let room of dataAtom.rooms){
+            if(room.roomId!==choosenRoom.roomId){
+                obj.push(room);
+            }
+          }
+          setDataAtom({username : dataAtom.username , rooms : obj});
+          
+          if(currentRoom.roomId===choosenRoom.roomId){
+            setCurrentRoom({roomId:'' , chats:[] , newMessage:false})
+          }
+
+      }
+  }
+
   return (
     <div className="roomList">
       {dataAtom.rooms.map((room) => {
@@ -46,6 +67,7 @@ const RoomList = () => {
             <div className="roomInfo">
               <p className="roomName">{room.roomId}</p>
               {room.newMessage && <span className="newMessageAlert">new</span>}
+              <button className="deleteRoom" onClick={(e)=>deleteRoom(e,room)}>Leave</button>
             </div>
             <span className="lastChat">
               { room.chats.length>0 ? (room.chats[room.chats.length - 1].name + ": "):''}
