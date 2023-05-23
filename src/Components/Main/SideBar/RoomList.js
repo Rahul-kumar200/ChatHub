@@ -15,13 +15,13 @@ const RoomList = () => {
         if (room.roomId == currentRoom.roomId) {
           new_obj.push({
             roomId: room.roomId,
-            newMessage: false,
+            newMessage: 0,
             chats: currentRoom.chats,
           });
         } else if (room.roomId == choosenRoom.roomId) {
           new_obj.push({
             roomId: choosenRoom.roomId,
-            newMessage: false,
+            newMessage: 0,
             chats: choosenRoom.chats,
           });
         } else {
@@ -31,7 +31,7 @@ const RoomList = () => {
       
       setCurrentRoom({
         roomId: choosenRoom.roomId,
-        newMessage: false,
+        newMessage: 0,
         chats: choosenRoom.chats,
       });
       setDataAtom({ username: dataAtom.username, rooms: new_obj });
@@ -53,7 +53,7 @@ const RoomList = () => {
           setDataAtom({username : dataAtom.username , rooms : obj});
           
           if(currentRoom.roomId===choosenRoom.roomId){
-            setCurrentRoom({roomId:'' , chats:[] , newMessage:false})
+            setCurrentRoom({roomId:'' , chats:[] , newMessage:0})
           }
 
       }
@@ -66,7 +66,7 @@ const RoomList = () => {
           <div className={currentRoom.roomId===room.roomId?"selectedRoom":"room"} onClick={() => selectRoom(room)}>
             <div className="roomInfo">
               <p className="roomName">{room.roomId}</p>
-              {room.newMessage && <span className="newMessageAlert">new</span>}
+              {room.newMessage>0 && <span className="newMessageAlert">{room.newMessage}</span>}
               <button className="deleteRoom" onClick={(e)=>deleteRoom(e,room)}>Leave</button>
             </div>
             <span className="lastChat">

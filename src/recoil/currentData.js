@@ -2,7 +2,7 @@ import {atom} from 'recoil'
 
 const currentState = {
     roomId : '',
-    newMessage:false,
+    newMessage:0,
     chats :[],
 }
 

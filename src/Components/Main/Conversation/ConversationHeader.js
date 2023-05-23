@@ -23,7 +23,7 @@ const ConversationHeader = () => {
         if (room.roomId == currentRoom.roomId) {
           new_obj.push({
             roomId: room.roomId,
-            newMessage: false,
+            newMessage: 0,
             chats: currentRoom.chats,
           });
         }else {

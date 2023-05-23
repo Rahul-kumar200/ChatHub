@@ -24,7 +24,7 @@ const SideBarFooter = ()=>{
             socket.emit('joinRoom',dataAtom.username,newRoom,()=>{
               console.log(`You have joined Room id: ${newRoom}`)
             })
-            let obj = {roomId : newRoom , newMessage : false , chats : []};
+            let obj = {roomId : newRoom , newMessage : 0 , chats : []};
             let newObj = {username : dataAtom.username , rooms : [...dataAtom.rooms , obj]};
       
             for (let i = 0; i < newObj.rooms.length; i++) {
