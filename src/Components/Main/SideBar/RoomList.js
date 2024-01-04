@@ -3,10 +3,12 @@ import userData from "../../../recoil/atom";
 import { useRecoilState } from "recoil";
 import currentData from "../../../recoil/currentData";
 import "./RoomList.css";
+import zIndex from "../../../recoil/toggleZIndex";
 
 const RoomList = () => {
   const [dataAtom, setDataAtom] = useRecoilState(userData);
   const [currentRoom, setCurrentRoom] = useRecoilState(currentData);
+  const[zindex , setZIndex] = useRecoilState(zIndex);
 
   const selectRoom = (choosenRoom) => {
     if (currentRoom.roomId !== choosenRoom.roomId) {
@@ -36,6 +38,7 @@ const RoomList = () => {
       });
       setDataAtom({ username: dataAtom.username, rooms: new_obj });
     }
+    setZIndex({sideZIndex:0 ,  mainZIndex : 1});
   };
 
   const deleteRoom =(e,choosenRoom)=>{

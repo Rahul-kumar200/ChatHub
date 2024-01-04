@@ -5,16 +5,23 @@ import { useNavigate } from "react-router-dom";
 import currentData from "../../../recoil/currentData";
 import axios from "axios";
 import userData from "../../../recoil/atom";
+import backbutton from "../../../logo/backbutton.png"
+import zIndex from "../../../recoil/toggleZIndex";
 
 const ConversationHeader = () => {
   const navigate = useNavigate();
   const [currentRoom, setcurrentRoom] = useRecoilState(currentData);
   const [dataAtom,setDataAtom] = useRecoilState(userData)
   const [roomLogo, setRoomLogo] = useState("");
+  const[zindex , setZIndex] = useRecoilState(zIndex);
 
   useEffect(() => {
     setRoomLogo(currentRoom.roomId.substring(0, 2));
   });
+
+  const changeZIndex = ()=>{
+    setZIndex({sideZIndex : 1 , mainZIndex : 0});
+  }
 
   const logout = async()=>{
 
@@ -47,7 +54,8 @@ const ConversationHeader = () => {
   return (
     <div className="conversationHeader">
       <div className="title">
-        <div className="roomLogo">{roomLogo}</div>
+        <img src={backbutton} className="backbutton" onClick={changeZIndex}/>
+        <div className={`roomLogo ${currentRoom.roomId=='' ? 'roomLogobackground1' : 'roomLogobackground2'}`}>{roomLogo}</div>
         <div className="roomName">{currentRoom.roomId}</div>
       </div>
       <div className="logoutDiv">

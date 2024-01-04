@@ -60,6 +60,7 @@ const Login = () => {
         <input
           className="input_password"
           placeholder="Password..."
+          type="password"
           onChange={(e) => setPassword(e.target.value)}
         />
         <button className="signin_button" onClick={checkAuth}>

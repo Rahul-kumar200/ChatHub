@@ -50,6 +50,7 @@ const Signup = () => {
         <input
           className="input_password"
           placeholder="Password..."
+          type="password"
           onChange={(e) => setPassword(e.target.value)}
         />
         <button className="signup_button" onClick={createAccount}>
